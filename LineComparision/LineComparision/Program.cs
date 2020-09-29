@@ -7,17 +7,31 @@ namespace LineComparision
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Line Comparison Computation Program on Master Branch");
-            Console.WriteLine("Enter the starting point x,y co-ordinates of the line");
+            Console.WriteLine("Enter the starting point x,y co-ordinates of the  1st line");
             double x1 = Convert.ToInt32(Console.ReadLine());
             double y1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the ending point x,y co-ordinates of the line");
+            Console.WriteLine("Enter the ending point x,y co-ordinates of the 1st line");
             double x2 = Convert.ToInt32(Console.ReadLine());
             double y2 = Convert.ToInt32(Console.ReadLine());
+            double len1 = getLength(x1, y1, x2, y2);
+            Console.WriteLine("Enter the starting point x,y co-ordinates of the  2nd line");
+            double x3 = Convert.ToInt32(Console.ReadLine());
+            double y3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the ending point x,y co-ordinates of the 2nd line");
+            double x4 = Convert.ToInt32(Console.ReadLine());
+            double y4 = Convert.ToInt32(Console.ReadLine());
+            double len2 = getLength(x3, y3, x4, y4);
+            if (len1.Equals(len2))
+                Console.WriteLine("Both lengths are equal");
+            else
+                Console.WriteLine("Both lengths are not equal");
+        }
+        public static double getLength(double x1, double y1, double x2, double y2)
+        {
             double diffX = x2 - x1;
             double diffY = y2 - y1;
             double lengthOfLine = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
-            Console.WriteLine("Length of Line: " + lengthOfLine);
+            return lengthOfLine;
         }
     }
 }
