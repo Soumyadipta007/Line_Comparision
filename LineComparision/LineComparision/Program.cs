@@ -21,10 +21,14 @@ namespace LineComparision
             double x4 = Convert.ToInt32(Console.ReadLine());
             double y4 = Convert.ToInt32(Console.ReadLine());
             double len2 = getLength(x3, y3, x4, y4);
-            if (len1.Equals(len2))
-                Console.WriteLine("Both lengths are equal");
+            double difference = Math.Abs(len1 - len2);
+            int diff = len1.CompareTo(len2);
+            if (diff > 0)
+                Console.WriteLine("Length of line 1 is greater than line 2 by " + difference);
+            else if (diff < 0)
+                Console.WriteLine("Length of line 2 is greater than line 1 by " + difference);
             else
-                Console.WriteLine("Both lengths are not equal");
+                Console.WriteLine("Both lengths are equal ");
         }
         public static double getLength(double x1, double y1, double x2, double y2)
         {
